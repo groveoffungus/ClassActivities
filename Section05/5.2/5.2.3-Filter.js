@@ -1212,8 +1212,27 @@ const data = [
   }
 ];
 
+// {
+//   userId: 1,
+//   id: 1,
+//   title: "delectus aut autem",
+//   completed: false
+// },
+
+
 // filter the to-dos for incomplete tasks
+let incompleteTasks = data.filter(task => task.completed === false);
+console.log(incompleteTasks);
 
 // filter for user 6's tasks
+const userSixTasks = data.filter(task => task.userId === 6);
+console.log(userSixTasks);
+
+// filter for user 6's incomplete tasks
+const userSixIncomplete = userSixTasks.filter(task => task.completed === false);
+console.log(userSixIncomplete);
 
 // filter for tasks with a title less than 24 characters long
+const shortTitles = data.filter(task => task.title.length < 24);
+console.log(shortTitles);
+

@@ -233,8 +233,50 @@
   }
 ];
 
+
+// {
+//   id: 1,
+//   name: "Leanne Graham",
+//   username: "Bret",
+//   email: "Sincere@april.biz",
+//   address: {
+//     street: "Kulas Light",
+//     suite: "Apt. 556",
+//     city: "Gwenborough",
+//     zipcode: "92998-3874",
+//     geo: {
+//       lat: "-37.3159",
+//       lng: "81.1496"
+//     }
+//   },
+//   phone: "1-770-736-8031 x56442",
+//   website: "hildegard.org",
+//   company: {
+//     name: "Romaguera-Crona",
+//     catchPhrase: "Multi-layered client-server neural-net",
+//     bs: "harness real-time e-markets"
+//   }
+// },
+
 // using map, create a list of cities from the data
+let cities = data.map((item) => {
+  return item.address.city;
+  });
+
+console.log(cities);
 
 // create an array of latitude and longitude coordinate pairs
+const inlinePairs = data.map(item => `${item.address.geo.lat}, ${item.address.geo.lng}`);
+console.log(inlinePairs);
+
+const blockPairs = data.map(item => {
+  let lat = item.address.geo.lat;
+  let lng = item.address.geo.lng;
+  return `${lat}, ${lng}`;
+});
+console.log(blockPairs);
 
 // create an array of strings that combine the company's catchPhrase and bs
+const jargon = data.map(item => `${item.company.catchPhrase}, ${item.company.bs}`);
+console.log(jargon);
+
